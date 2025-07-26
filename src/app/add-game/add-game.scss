@@ -1,0 +1,44 @@
+.container {
+    padding: 3rem;
+    background-color: #fff;
+}
+
+.form-field {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    width: 15%;
+}
+
+.name-field {
+    width: 20%;
+}
+
+.game-form {
+    height: calc(100% - 23rem);
+    overflow-y: scroll;
+}
+
+.small-icons {
+    position: relative;
+    top: 0.55rem;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        height: calc(100% - 25rem);
+        overflow: auto;
+        padding: 1rem;
+    }
+    .game-form {
+    height: 100%;
+}
+.w-70 {
+    width: 88%;
+}
+.form-field {
+    width: 45%;
+}
+.delete-icon {
+    margin-bottom: 6rem;
+}
+}

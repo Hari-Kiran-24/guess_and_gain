@@ -1,0 +1,60 @@
+<div class="mat-elevation-z8 container w-70">
+    <form class="game-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+
+        <div formArrayName="skills">
+            <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i">
+
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Meeting date</mat-label>
+                    <input matInput [matDatepicker]="datepicker" [max]="maxDate" formControlName="date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker #datepicker />
+                    <mat-datepicker-toggle [for]="datepicker" matIconSuffix />
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Meeting time</mat-label>
+                    <input matInput [matTimepicker]="timepicker" [matTimepickerMax]="maxTime" formControlName="time">
+                    <mat-timepicker interval="1min" #timepicker />
+                    <mat-timepicker-toggle [for]="timepicker" matIconSuffix />
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline" class="form-field name-field">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" formControlName="name">
+                    <mat-error *ngIf="skill.get('name')?.invalid && skill.get('name')?.touched">Name is
+                        required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Points</mat-label>
+                    <input matInput type="number" formControlName="points">
+                    <mat-error *ngIf="skill.get('points')?.invalid && skill.get('points')?.touched">Ponits are
+                        required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Rank</mat-label>
+                    <input matInput type="number" min="1" max="4" formControlName="rank">
+                    <mat-error *ngIf="skill.get('rank')?.invalid && skill.get('rank')?.touched">Rank is required</mat-error>
+                </mat-form-field>
+
+                <button mat-icon-button color="warn" aria-label="Remove Game" class="delete-icon small-icons"
+                    (click)="removeSkill(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="Add Game" color="success" [disabled]="skills && skills.length === 4"
+                    class="add-icon small-icons" (click)="addSkill()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <button mat-raised-button class="mr-2" color="primary" [disabled]="skills && skills.length === 4"
+            (click)="addSkill()">Add Game</button>
+        <button mat-raised-button color="accent" type="submit" [disabled]="myForm.invalid">Submit</button>
+    </form>
+</div>

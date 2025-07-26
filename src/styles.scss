@@ -30,4 +30,60 @@ html {
 }/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Mulish", sans-serif; 
+}
+* {
+   font-family: "Mulish", sans-serif;
+}
+
+.active {
+    color: #fff !important;
+    background-color: #000 !important;
+}
+.container {
+    margin: 0 auto;
+}
+
+
+
+.text-center {
+  text-align: center;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.example-button-row {
+    .mat-mdc-button, .mat-mdc-button .mdc-button__ripple {
+        border-radius: 0px !important;
+    }
+}
+
+ .game-form {
+   .mat-mdc-raised-button, .mat-mdc-raised-button .mdc-button__ripple {
+     border-radius: 0px !important;
+   }
+   .mat-mdc-raised-button:not(:disabled) {
+    color: #000;
+   }
+ }
+
+.w-70 {
+  width: 70%;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    
+.big-title {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.w-75 {
+  width: 95%;
+}
+}

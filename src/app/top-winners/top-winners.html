@@ -1,0 +1,54 @@
+<div class="mat-elevation-z8 container w-75">
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      S No.
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="totalWonGames">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by totalWonGames">
+      Total Won Games
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.totalWonGames}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="totalGames">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by totalGames">
+      Total Games Played
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.totalGames}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="joinedDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by joinedDate">
+      Player Joined Date
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.joinedDate}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<!-- Weight Column -->
+
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons class="mat-paginator-sticky"
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

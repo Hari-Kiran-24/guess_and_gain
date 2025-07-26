@@ -1,0 +1,47 @@
+<div class="mat-elevation-z8 container w-75">
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+     S No.
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="winner">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by winner">
+      Winner
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.winner}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="points">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by points">
+      Points
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+  </ng-container>
+
+
+   <!-- Symbol Column -->
+  <ng-container matColumnDef="playedOn">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by playedOn">
+      Played On
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.playedOn}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons class="mat-paginator-sticky"
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

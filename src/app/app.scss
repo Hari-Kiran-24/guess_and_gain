@@ -1,0 +1,74 @@
+.active-link {
+  background-color: white;
+  opacity: 1;
+}
+
+.example-button-row {
+    a {
+        font-size: 1.5rem;
+        padding: 2rem 3rem;
+        color: #000;
+    }
+    .mat-mdc-button .mdc-button__ripple {
+        border-radius: 0px !important;
+    }
+}
+
+.link-container {
+    margin: 0px auto;
+    background-color: #ffffff;
+}
+
+.logo-image {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 0.8rem;
+}
+
+.main-container {
+    font-family: Mulish;
+     position: relative;
+background-image: url(../../public/images/image3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.back-image {
+    position: absolute;
+    background-color: #000;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+     width: 100%;
+    height: 100%;
+}
+
+.main-content {
+    position: absolute;
+     width: 100%;
+    height: 100%;
+}
+
+.big-title {
+  font-size: 45px;
+  padding: 3rem 0px;
+  margin: 0px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .example-button-row {
+    a {
+        font-size: 1rem;
+        padding: 1rem;
+        color: #000;
+    }
+}
+.main-container {
+    padding-bottom: 3rem;
+}
+}
